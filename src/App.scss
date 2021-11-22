@@ -1,0 +1,30 @@
+:root {
+  color1: #4471d3;
+}
+body {
+  background: rgb(194, 138, 138);
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .login-form {
+    border: 1px solid #ccc;
+    margin-top: 10vh;
+    padding: 20px;
+    box-shadow: -5px 5px 10px #ccc;
+  }
+
+  .input-fields {
+    margin-top: 1rem;
+    margin-bottom: 20px;
+  }
+  .form-button {
+    margin-left: 2rem;
+  }
+  .text-end {
+    float: right;
+  }
+}
