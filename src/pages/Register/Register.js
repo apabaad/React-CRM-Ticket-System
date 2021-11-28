@@ -10,39 +10,43 @@ const Register = () => {
       type: 'text',
       name: 'fname',
       required: true,
+      placeholder: 'John',
     },
     {
       label: 'Last Name',
       type: 'text',
       name: 'lname',
       required: true,
+      placeholder: 'Smith',
     },
     {
       label: 'Email',
       type: 'text',
       name: 'email',
       required: true,
+      placeholder: 'a@abc.com',
     },
     {
       label: 'Password',
       type: 'password',
       name: 'password',
       required: true,
+      placeholder: '********',
     },
     {
       label: 'Confirm Password',
       type: 'password',
       name: 'password2',
       required: true,
+      placeholder: '********',
     },
     {
       label: 'Phone',
       type: 'number',
       name: 'phone',
       required: true,
+      placeholder: '01-00000',
     },
-
-    { label: 'Password', type: 'password', name: 'password' },
   ];
   return (
     <div className="login-page">

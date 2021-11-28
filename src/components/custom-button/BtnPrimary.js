@@ -12,7 +12,7 @@ export const BtnPrimary = ({ text }) => {
 export const BtnOutline = ({ text }) => {
   return (
     <div>
-      <button className="btn-primary">{text}</button>
+      <button className="btn-success">{text}</button>
     </div>
   );
 };
