@@ -12,10 +12,15 @@
   }
 }
 
-btn-outline {
+.btn-outline {
   background: #ad4f4f;
   border: 1px solid #4471d3;
   line-height: 1.5rem;
   padding: 10px 20px;
   border-radius: 5px;
+
+  &:hover {
+    background: #ad4f4;
+    cursor: pointer;
+  }
 }

@@ -9,9 +9,15 @@ const Login = () => {
       label: 'Email',
       type: 'text',
       name: 'email',
+      placeholder: 'a@abc.com',
     },
 
-    { label: 'Password', type: 'password', name: 'password' },
+    {
+      label: 'Password',
+      type: 'password',
+      name: 'password',
+      placeholder: '********',
+    },
   ];
   return (
     <div className="login-page">
