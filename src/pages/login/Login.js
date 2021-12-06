@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { BtnPrimary } from '../../components/custom-button/BtnPrimary';
 import CustomInput from '../../components/custom-input/CustomInput';
+import { adminLogin } from '../profile/adminUserAction';
 
 const initialState = {
   email: 'a@abc.com',
@@ -9,6 +11,7 @@ const initialState = {
 };
 
 const Login = () => {
+  const dispatch = useDispatch();
   const [loginInfo, setLoginInfo] = useState(initialState);
 
   const handleOnChange = (e) => {
@@ -18,7 +21,7 @@ const Login = () => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    console.log(loginInfo);
+    dispatch(adminLogin(loginInfo));
   };
   const inputFields = [
     {
@@ -26,7 +29,7 @@ const Login = () => {
       type: 'text',
       name: 'email',
       placeholder: 'a@abc.com',
-      onchange: handleOnChange,
+      onChange: handleOnChange,
       value: loginInfo.email,
       required: true,
     },
@@ -36,7 +39,7 @@ const Login = () => {
       type: 'password',
       name: 'password',
       placeholder: '********',
-      onchange: handleOnChange,
+      onChange: handleOnChange,
       value: loginInfo.password,
       required: true,
     },
