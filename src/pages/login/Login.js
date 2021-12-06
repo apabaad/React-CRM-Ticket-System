@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { BtnPrimary } from '../../components/custom-button/BtnPrimary';
 import CustomInput from '../../components/custom-input/CustomInput';
 import { adminLogin } from '../profile/adminUserAction';
@@ -13,6 +13,12 @@ const initialState = {
 const Login = () => {
   const dispatch = useDispatch();
   const [loginInfo, setLoginInfo] = useState(initialState);
+  const { isLoading, isAuth } = useSelector((state) => state.admin);
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    isAuth && navigate('/dashboard');
+  }, [isAuth, navigate]);
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;

@@ -6,11 +6,14 @@ import Register from './pages/Register/Register';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import Dashboard from './pages/dashboard/Dashboard';
+
 function App() {
   return (
     <Router>
       <ToastContainer />
       <Routes>
+        <Route exact path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
