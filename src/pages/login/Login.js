@@ -1,15 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BtnPrimary } from '../../components/custom-button/BtnPrimary';
 import CustomInput from '../../components/custom-input/CustomInput';
 
+const initialState = {
+  email: 'a@abc.com',
+  password: '1234567',
+};
+
 const Login = () => {
+  const [loginInfo, setLoginInfo] = useState(initialState);
+
+  const handleOnChange = (e) => {
+    const { name, value } = e.target;
+    setLoginInfo({ ...loginInfo, [name]: value });
+  };
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    console.log(loginInfo);
+  };
   const inputFields = [
     {
       label: 'Email',
       type: 'text',
       name: 'email',
       placeholder: 'a@abc.com',
+      onchange: handleOnChange,
+      value: loginInfo.email,
+      required: true,
     },
 
     {
@@ -17,6 +36,9 @@ const Login = () => {
       type: 'password',
       name: 'password',
       placeholder: '********',
+      onchange: handleOnChange,
+      value: loginInfo.password,
+      required: true,
     },
   ];
   return (
@@ -25,7 +47,7 @@ const Login = () => {
         <h3>Login</h3>
         <hr />
         <div className="input-fields">
-          <form>
+          <form onSubmit={handleOnSubmit}>
             {inputFields.map((row, i) => (
               <CustomInput key={i} {...row} />
             ))}

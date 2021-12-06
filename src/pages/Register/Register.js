@@ -32,7 +32,7 @@ const Register = () => {
     e.preventDefault();
     const { confirmPassword, ...rest } = formData;
     const result = await userRegisterAPI(rest);
-
+    console.log(result);
     if (result.status === 'success') {
       toast.success(result.message);
     } else {
