@@ -1,13 +1,16 @@
 import React from 'react';
 import MainLayout from '../../components/layout/MainLayout';
 
-const Dashboard = () => {
+const Profile = () => {
   return (
     <MainLayout>
-      <h1>dashboard</h1>
-      <hr />
+      <div>
+        <ul>Profile</ul>
+        <hr />
+        Profile Coming
+      </div>
     </MainLayout>
   );
 };
 
-export default Dashboard;
+export default Profile;
